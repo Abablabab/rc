@@ -3,11 +3,7 @@ set nocompatible
 
 " A bunch of things vim would already everywhere but redhat
 " Seriously, this is even default on WINDOWS
-if has("vms")
-  set nobackup
-else
-  set backup  
-endif
+set nobackup
 set history=50
 set ruler     
 set showcmd   
