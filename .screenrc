@@ -1,4 +1,4 @@
-defutf8 on                                                       
+defutf8 on
 defflow off
 startup_message off
 autodetach on
@@ -26,9 +26,8 @@ defbce "on"
 #                       you can specify extra params, but %Lw on it's own is
 #                       just fine
 
-backtick 1 0 60 /usr/bin/whoami 
+backtick 1 0 60 /usr/bin/whoami
 backtick 2 0 0 /bin/hostname
 
-caption always "%{= kK} %=%{= kW}%1`@%H%{-} |  %M %d  "
-hardstatus alwayslastline "%{= Kk}%-Lw%{= KW}{%t}%{-}%+Lw  %=  | %C %a "
-
+caption always "%{= kK} %=%{= kW}%1`@%H%{-} | %d/%m/%y "
+hardstatus alwayslastline "%{= Kk}%-Lw%{= KW}{%t}%{-}%+Lw  %=  |  %c   "
