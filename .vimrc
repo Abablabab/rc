@@ -1,6 +1,12 @@
 " Force vim settings, must be first
 set nocompatible
 
+" Spaces and tabs
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab 
+
 set nobackup
 set history=50
 set ruler
@@ -12,10 +18,6 @@ set ruler
 set visualbell
 set incsearch
 set autoindent
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab " Spaces instead of tabs
 set showmatch
 set spell
 
@@ -24,11 +26,8 @@ syntax on
 " Get it looking nice
 set t_Co=256
 let mapleader=","
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
-colorscheme solarized
-set background=dark
+colorscheme industry
+
 
 " I hate mouse support
 set mouse=
@@ -72,8 +71,3 @@ match TrailWs /\s\+$/
 " Don't enforce 80c pain on plaintext
 autocmd FileType text :match OverLength //
 autocmd FileType text :set textwidth=0
-
-" Because of the atrocities we're committing to get such a pretty vim,
-" Some terminals can get pretty upset
-" So let's try and clean up after ourselves
-au VimLeave * reset && clear
