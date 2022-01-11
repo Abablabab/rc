@@ -53,24 +53,28 @@ set completeopt=longest,menuone
 set wildmode=longest,list,full
 set wildmenu
 
-" Auto indent on braces
+" Auto-indent on braces
 set smartindent
 
-" Add the ability to autocontinue comments
+" Auto-continue comments
 set formatoptions+=r
 
-" Line length management
-set textwidth=80
-highlight OverLength ctermbg=52 ctermfg=white guibg=#800000
-match OverLength /\%81v.*/
+" Highlight long lines
+highlight OverLength ctermbg=52 ctermfg=white
+"match OverLength /\%81v.*/
+match OverLength /\%>80v/
 
-" Highlight trailing whitespace
+" Highlight trailing white-space
 highlight TrailWs ctermbg=52 ctermfg=white
-match TrailWs /\s\+$/
+2match TrailWs /\s\+$/
 
+" Wrap at 80c
+set textwidth=80
 " Don't enforce 80c pain on plaintext
 autocmd FileType text :match OverLength //
 autocmd FileType text :set textwidth=0
+" We can't wrap python, it breaks things
+autocmd FileType python :set textwidth=0
 
 " Get copy/paste inside WSL
 " Is there ANYTHING stackoverflow can't answer!
