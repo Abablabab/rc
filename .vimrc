@@ -69,7 +69,7 @@ highlight TrailWs ctermbg=52 ctermfg=white
 
 " Window dressing for GNU screen
 if &term == "screen"
-    set t_ts=^[k
+    set t_ts=^[k " ^[ are escapes (C^v esc) 
     set t_fs=^[\
     let &titlestring = "vim:" . expand("%:t")
     set title
