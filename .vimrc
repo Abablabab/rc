@@ -30,7 +30,7 @@ syntax on
 " Spell checking
 set spell
 hi clear SpellBad
-hi SpellBad cterm=underline
+hi SpellBad cterm=ctermbg=17
 
 " I hate mouse support
 set mouse=
@@ -60,21 +60,20 @@ set smartindent
 set formatoptions+=r
 
 " Highlight long lines
-highlight OverLength ctermbg=52 ctermfg=white
-"match OverLength /\%81v.*/
-match OverLength /\%>80v/
+highlight OverLength ctermbg=53 ctermfg=white
+match OverLength /\%>81v/
 
 " Highlight trailing white-space
 highlight TrailWs ctermbg=52 ctermfg=white
 2match TrailWs /\s\+$/
 
-" Wrap at 80c
-set textwidth=80
-" Don't enforce 80c pain on plaintext
-autocmd FileType text :match OverLength //
-autocmd FileType text :set textwidth=0
-" We can't wrap python, it breaks things
-autocmd FileType python :set textwidth=0
+" Window dressing for GNU screen
+if &term == "screen"
+    set t_ts=^[k
+    set t_fs=^[\
+    let &titlestring = "vim:" . expand("%:t")
+    set title
+endif
 
 " Get copy/paste inside WSL
 " Is there ANYTHING stackoverflow can't answer!
